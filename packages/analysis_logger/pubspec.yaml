@@ -1,0 +1,25 @@
+name: analysis_logger
+description: A new Flutter package project.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  authenticator:
+    path: ../authenticator
+  firebase_analytics: ^10.1.1
+  firebase_crashlytics: ^3.0.12
+  flutter:
+    sdk: flutter
+  riverpod: ^2.1.1
+  riverpod_annotation: ^1.0.6
+
+dev_dependencies:
+  altive_lints: ^1.6.1
+  flutter_test:
+    sdk: flutter
+  riverpod_generator: ^1.0.6
+
+flutter:

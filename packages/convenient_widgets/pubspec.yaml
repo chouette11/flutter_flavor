@@ -1,0 +1,37 @@
+name: convenient_widgets
+description: Convenient Widgets.
+publish_to: "none"
+version: 1.0.0
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^1.1.5
+  simple_logger: ^1.8.0+1
+
+dev_dependencies:
+  altive_lints: ^1.6.1
+  build_runner: ^2.2.1
+  flutter_gen_runner: ^5.1.0+1
+  flutter_test:
+    sdk: flutter
+
+flutter_gen:
+  enabled: true
+  output: lib/gen/
+  line_length: 80
+  integrations:
+    flutter_svg: true
+    flare_flutter: false
+    rive: false
+    lottie: false
+  assets:
+    outputs:
+      style: dot-delimiter
+
+flutter:
+  assets:
+    - assets/

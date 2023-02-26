@@ -1,0 +1,28 @@
+name: amazon_paapi
+description: A new Flutter package project.
+publish_to: "none"
+version: 1.0.0
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  collection: ^1.15.0
+  crypto: ^3.0.1
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^2.0.1
+  http: ^0.13.1
+  intl: ^0.17.0
+  json_annotation: ^4.8.0
+  simple_logger: ^1.8.0+1
+
+dev_dependencies:
+  altive_lints: ^1.6.1
+  build_runner: ^2.0.4
+  flutter_test:
+    sdk: flutter
+  freezed: ^2.0.2
+  json_serializable: ^6.6.1
+
+flutter:

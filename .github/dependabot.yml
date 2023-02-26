@@ -1,0 +1,63 @@
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/amazon_paapi" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/analysis_logger" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/authenticator" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/convenient_widgets" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/flutter_app" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/notification_receiver" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/notification_sender" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/remote_parameter_fetcher" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/rest_api_client" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/themes" # Location of package manifests
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/util" # Location of package manifests
+    schedule:
+      interval: "monthly"

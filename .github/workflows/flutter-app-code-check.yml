@@ -1,0 +1,52 @@
+name: Flutter app code check
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths-ignore:
+      - "**/README.md"
+      - ".vscode/**"
+      - ".github/**"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Parse Flutter version
+        uses: kuhnroyal/flutter-fvm-config-action@v1
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: ${{ env.FLUTTER_CHANNEL }}
+          cache: true
+
+      - name: Prepare Melos
+        run: echo "MELOS_SDK_PATH=${{ env.FLUTTER_ROOT }}" >> $GITHUB_ENV
+
+      - name: Install Melos
+        uses: bluefireteam/melos-action@v2
+
+      - name: Analyze packages
+        run: melos run analyze --no-select
+
+      - name: Check for the existence of unformatted files
+        run: melos run format --no-select
+
+      - name: Run package tests
+        run: melos run test --no-select
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ~/coverage/lcov.info
+          fail_ci_if_error: false
